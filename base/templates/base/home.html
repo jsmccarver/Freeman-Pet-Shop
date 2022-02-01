@@ -1,9 +1,9 @@
 {% extends 'main.html' %} {% block content %}
 <h1>Home Template</h1>
 <div>
-  {% for room in rooms %}
+  {% for pet in pets %}
   <div>
-    <h1>{{room.id}} -- <a href="/pets/{{room.id}}">{{room.name}}</a></h1>
+    <h1>{{pet.id}} -- <a href="{% url 'pet' pet.id %}">{{pet.name}}</a></h1>
   </div>
   {% endfor %}
 </div>
