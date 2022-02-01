@@ -3,7 +3,7 @@
 <div>
   {% for room in rooms %}
   <div>
-    <h1>{{room.id}} -- {{room.name}}</h1>
+    <h1>{{room.id}} -- <a href="/pets/{{room.id}}">{{room.name}}</a></h1>
   </div>
   {% endfor %}
 </div>
