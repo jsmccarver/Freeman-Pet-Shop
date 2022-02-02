@@ -53,6 +53,7 @@ MIDDLEWARE = [
 ]
 
 CSRF_COOKIE_SECURE=False
+CSRF_TRUSTED_ORIGINS = ["https://freemanpets.com", 'https://freeman-pet-shop.herokuapp.com']
 ROOT_URLCONF = 'petstore.urls'
 
 TEMPLATES = [
