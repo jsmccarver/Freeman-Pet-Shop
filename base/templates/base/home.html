@@ -7,6 +7,8 @@
     <div>
       <span>
         <h1><a href="{% url 'pet' pet.id %}">{{pet.name}}</a></h1>
+        <a href="{% url 'update-pet' pet.id %}"> Update Pet </a>
+        <a href="{% url 'delete-pet' pet.id %}"> Delete Pet </a>
         <h2>Type: {{pet.type}}</h2>
         <h2>Breed: {{pet.breed}}</h2>
       </span>
@@ -14,6 +16,7 @@
     {% endfor %}
   </div>
 </div>
-  <a href="{% url 'create-pet' %}"> Create Pet </a>
+  <a href="{% url 'create-pet' %}"> Upload Pet </a>
+
   {% endblock content %}
 </div>

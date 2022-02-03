@@ -32,8 +32,22 @@ def create_pet(request):
     return render(request, 'base/pets_form.html', context)
 
 
-def updateRoom(request, pk):
+def update_pet(request, pk):
     pet = Pet.objects.get(id=pk)
     form = PetForm(instance=pet)
-    context = {'form'}
-    return render(request, 'base/pet_form.html', context)
+    if request.method == 'POST':
+        form = PetForm(request.POST, request.FILES, instance=pet)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+
+    context = {'form': form}
+    return render(request, 'base/pets_form.html', context)
+
+
+def delete_pet(request, pk):
+    pet = Pet.objects.get(id=pk)
+    if request.method == 'POST':
+        pet.delete()
+        return redirect('home')
+    return render(request, 'base/delete.html', {'obj': pet})
