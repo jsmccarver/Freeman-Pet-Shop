@@ -1,11 +1,19 @@
 {% extends 'main.html' %} {% block content %}
-<h1>Home Template</h1>
+<h1>Our Most Recent Pets</h1>
 <div>
-  {% for pet in pets %}
+ 
   <div>
-    <h1>{{pet.id}}--<a href="{% url 'pet' pet.id %}">{{pet.name}}</a></h1>
+    {% for pet in pets %}
+    <div>
+      <span>
+        <h1><a href="{% url 'pet' pet.id %}">{{pet.name}}</a></h1>
+        <h2>Type: {{pet.type}}</h2>
+        <h2>Breed: {{pet.breed}}</h2>
+      </span>
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 </div>
-
-{% endblock content %}
+  <a href="{% url 'create-pet' %}"> Create Pet </a>
+  {% endblock content %}
+</div>

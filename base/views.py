@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .models import Pet
+from .forms import PetForm
 # Create your views here.
-#pets = [
+# pets = [
 #        {'id': 1, 'name': 'Lets learn python!'},
 #        {'id': 2, 'name': 'Design with me'},
 #        {'id': 3, 'name': 'Frontend developers'},
@@ -10,10 +11,17 @@ from .models import Pet
 
 def home(request):
     pets = Pet.objects.all()
-    context = {'pets' : pets}
+    context = {'pets': pets}
     return render(request, 'base/home.html', context)
-    
+
+
 def pet(request, pk):
     pet = Pet.objects.get(id=pk)
-    context = {'pet' : pet}
+    context = {'pet': pet}
     return render(request, "base/pets.html", context)
+
+
+def create_pet(request):
+    form = PetForm
+    context = {'form': form}
+    return render(request, 'base/pets_form.html', context)
