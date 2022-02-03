@@ -28,8 +28,8 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'Optional default value')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['freeman-pet-shop.herokuapp.com', '127.0.0.1', 'localhost', 'freemanpets.com']
-
+ALLOWED_HOSTS = ['https://freeman-pet-shop.herokuapp.com', 'http://127.0.0.1', 'http://localhost', 'https://freemanpets.com']
+CSRF_TRUSTED_ORIGINS = ['https://front.bluemix.net']
 
 # Application definition
 
