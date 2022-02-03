@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Pet
 from .forms import PetForm
 # Create your views here.
@@ -22,8 +22,11 @@ def pet(request, pk):
 
 
 def create_pet(request):
-    form = PetForm
+    form = PetForm()
     if request.method == 'POST':
-        form = PetForm(request.POST)
+        form = PetForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
     context = {'form': form}
     return render(request, 'base/pets_form.html', context)
