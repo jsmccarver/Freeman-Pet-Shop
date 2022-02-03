@@ -30,3 +30,10 @@ def create_pet(request):
             return redirect('home')
     context = {'form': form}
     return render(request, 'base/pets_form.html', context)
+
+
+def updateRoom(request, pk):
+    pet = Pet.objects.get(id=pk)
+    form = PetForm(instance=pet)
+    context = {'form'}
+    return render(request, 'base/pet_form.html', context)
