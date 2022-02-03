@@ -6,9 +6,10 @@ from .models import Pet
 #        {'id': 2, 'name': 'Design with me'},
 #        {'id': 3, 'name': 'Frontend developers'},
 #    ]
-pets = Pet.objects.all()
+
 
 def home(request):
+    pets = Pet.objects.all()
     context = {'pets' : pets}
     return render(request, 'base/home.html', context)
     
