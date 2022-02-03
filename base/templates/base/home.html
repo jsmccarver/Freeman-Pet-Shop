@@ -11,6 +11,7 @@
         <a href="{% url 'delete-pet' pet.id %}"> Delete Pet </a>
         <h2>Type: {{pet.type}}</h2>
         <h2>Breed: {{pet.breed}}</h2>
+        <img src={{pet.image}}/>
       </span>
     </div>
     {% endfor %}
