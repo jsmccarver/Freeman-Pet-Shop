@@ -23,5 +23,7 @@ def pet(request, pk):
 
 def create_pet(request):
     form = PetForm
+    if request.method == 'POST':
+        form = PetForm(request.POST)
     context = {'form': form}
     return render(request, 'base/pets_form.html', context)
