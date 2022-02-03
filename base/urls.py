@@ -7,5 +7,3 @@ urlpatterns = [
     path('pet/<str:pk>', views.pet, name='pet'),
     path('create-pet', views.create_pet, name='create-pet'),
 ]
-
-urlpatterns += staticfiles_urlpatterns()
