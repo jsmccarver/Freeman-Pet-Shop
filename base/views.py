@@ -1,5 +1,6 @@
+from multiprocessing import context
 from django.shortcuts import render, redirect
-from .models import Pet
+from .models import Pet, Room
 from .forms import PetForm
 # Create your views here.
 # pets = [
@@ -11,7 +12,10 @@ from .forms import PetForm
 
 def home(request):
     pets = Pet.objects.all()
-    context = {'pets': pets}
+    rooms = Room.objects.all()
+    context = {'pets': pets,
+               'rooms': rooms
+               }
     return render(request, 'base/home.html', context)
 
 
@@ -19,6 +23,12 @@ def pet(request, pk):
     pet = Pet.objects.get(id=pk)
     context = {'pet': pet}
     return render(request, "base/pets.html", context)
+
+
+def room(request, pk):
+    room = Room.objects.get(id=pk)
+    context = {'room': room}
+    return render(request, 'base/room.html', context)
 
 
 def create_pet(request):

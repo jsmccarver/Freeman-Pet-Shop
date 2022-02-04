@@ -1,9 +1,20 @@
 {% extends 'main.html' %} {% block content %}
-<h1>Our Most Recent Pets</h1>
+<style>
+  .Home-Container{
+    grid
+  }
+</style>
 <div>
- 
   <div>
-    {% for pet in pets %}
+    {% for room in rooms %}
+    <div>
+      <span>
+        <h1><a href="{% url 'room' room.id %}">Title: {{room.name}} </a></h1>
+        <h2>Topic: {{room.topic}}</h2>
+        <p>Posted by: {{room.host}}</p>
+      </span>
+    </div>
+    {% endfor %} {% for pet in pets %}
     <div>
       <span>
         <h1><a href="{% url 'pet' pet.id %}">{{pet.name}}</a></h1>
@@ -11,13 +22,11 @@
         <a href="{% url 'delete-pet' pet.id %}"> Delete Pet </a>
         <h2>Type: {{pet.type}}</h2>
         <h2>Breed: {{pet.breed}}</h2>
-        <img src={{pet.image}}/>
+        <img src="{{pet.image}}" />
       </span>
     </div>
     {% endfor %}
   </div>
-</div>
   <a href="{% url 'create-pet' %}"> Upload Pet </a>
-
-  {% endblock content %}
 </div>
+{% endblock content %}
