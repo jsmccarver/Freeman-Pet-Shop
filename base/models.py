@@ -25,10 +25,16 @@ class Room(models.Model):
     def __str__(self):
         return self.name
 
+class Type(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
 
 class Pet(models.Model):
     poster = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    type = models.CharField(max_length=200)
+    type = models.ForeignKey(Type, on_delete=models.SET_NULL, null=True)
     breed = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     age = models.CharField(max_length=200)

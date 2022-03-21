@@ -1,4 +1,16 @@
+<div class="navbar-container">
+
+<div class="navbar">
+
 <a href="/">
   <h1>McCarver Freeman Foster Pets</h1>
 </a>
-<hr />
+
+{% if request.user.is_authenticated %}
+<a href="{% url "logout" %}">logout</a>
+{% else %}
+<a href="{% url "login" %}">Login</a>
+
+{% endif %}
+</div>
+</div>

@@ -4,13 +4,13 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
+    path('login/',views.loginPage, name="login"),
+    path('logout/',views.logoutUser, name="logout"),
     path('', views.home, name='home'),
-
-
-    path('pet/<str:pk>', views.pet, name='pet'),
+    path('pet/<str:pk>/', views.pet, name='pet'),
     path('create-pet/', views.create_pet, name='create-pet'),
     path('update-pet/<str:pk>/', views.update_pet, name='update-pet'),
-    path('delete-pet/<str:pk>', views.delete_pet, name='delete-pet'),
+    path('delete-pet/<str:pk>/', views.delete_pet, name='delete-pet'),
 
 
     path('room/<str:pk>', views.room, name='room')

@@ -13,9 +13,40 @@ h1,h2,h3{
 a{
     text-decoration: none;
 }
+a:visited {
+    color: inherit;
+}
+.navbar-container{
+    border-bottom: 1px solid grey;
+}
+.navbar{
+    max-width: 1500px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important; 
+    margin: 0 auto;
+}
+.home-container{
+    margin: 0 auto;
+    max-width: 1500px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+.types{
+    display: flex;
+    flex-direction: column;
+}
+
+.pet-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 .card-pets{
     display: flex;
     flex-direction: column;
+    margin-right: 2.5rem;
 }
 .card-pets h1{
     font-size: 1.8rem;
@@ -24,6 +55,17 @@ a{
     font-size: 1.5rem;
 }
 .card-pets img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+.pet-page{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.pet-page img{
     width: 300px;
     height: 300px;
     object-fit: cover;

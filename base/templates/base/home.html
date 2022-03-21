@@ -4,29 +4,36 @@
     grid
   }
 </style>
-<div>
+<div class="home-container">
   <div>
-    {% for room in rooms %}
-    <div>
-      <span>
-        <h1><a href="{% url 'room' room.id %}">Title: {{room.name}} </a></h1>
-        <h2>Topic: {{room.topic}}</h2>
-        <p>Posted by: {{room.host}}</p>
-      </span>
+    <h3>Browse Pets</h3>
+    <form method="GET" action="{% url 'home' %}"> 
+      <input type="text" name="q" placeholder="Search Pets"/>
+    </form> 
+    <div class="types">
+      <a href="{% url 'home' %}?q=">All</a>
+      {% for type in types %}
+      <a href="{% url 'home' %}?q={{type.name}}">{{type.name}}</a>
+      {% endfor %}
     </div>
-    {% endfor %} {% for pet in pets %}
-    <div class='card-pets'>
-       <img src="{{pet.image}}" />
-       <div>
-         <a href="{% url 'update-pet' pet.id %}"> Update Pet </a>
-         <a href="{% url 'delete-pet' pet.id %}"> Delete Pet </a>
-       </div>
+    <a href="{% url 'create-pet' %}"> Upload Pet </a>
+  </div>
+  <div>
+    <h5>{{pet_count}} Pets Available</h5>
+    <div class="pet-list">
+      {% for pet in pets %}
+      <div class="card-pets">
+        <img src="{{pet.image}}" />
+        <div>
+          <a href="{% url 'update-pet' pet.id %}"> Update Pet </a>
+          <a href="{% url 'delete-pet' pet.id %}"> Delete Pet </a>
+        </div>
         <h1>Name: <a href="{% url 'pet' pet.id %}">{{pet.name}}</a></h1>
         <h2>Type: {{pet.type}}</h2>
         <h2>Breed: {{pet.breed}}</h2>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
-  <a href="{% url 'create-pet' %}"> Upload Pet </a>
 </div>
 {% endblock content %}

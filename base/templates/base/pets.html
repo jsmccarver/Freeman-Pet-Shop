@@ -1,4 +1,5 @@
 {% extends 'main.html' %} {% block content %}
-<h1>Pet Template</h1>
-My First Name is {{ pet.name }}.
+<div class="pet-page"> 
+<h4>My First Name is {{ pet.name }}.</h4>
 <img src="{{ pet.image.url }}" />{% endblock content %}
+</div>
