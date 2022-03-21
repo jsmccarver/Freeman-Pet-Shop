@@ -4,6 +4,7 @@ body {
   padding: 0px;
   margin: 0px;
   color: #d9dae6;
+  overflow-x: hidden;
 }
 h1,
 h2,
@@ -35,6 +36,7 @@ a:visited {
   align-items: center;
   justify-content: space-between !important;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 .container {
   background-color: #2d2c39;
@@ -47,6 +49,7 @@ a:visited {
   max-width: 1500px;
   grid-template-columns: 1fr 10fr;
   gap: 3rem;
+  padding: 0 2rem;
   margin: 0 auto;
 }
 .type-list {
