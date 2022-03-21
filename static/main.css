@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+body{
+    background-color: aquamarine;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+h1,h2,h3{
+    margin: 0px;
+    padding: 0px;
+    line-height: 2rem;
+}
+a{
+    text-decoration: none;
+}
+.card-pets{
+    display: flex;
+    flex-direction: column;
+}
+.card-pets h1{
+    font-size: 1.8rem;
+}
+.card-pets h2{
+    font-size: 1.5rem;
+}
+.card-pets img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
