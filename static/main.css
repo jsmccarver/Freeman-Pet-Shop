@@ -16,7 +16,8 @@ h3 {
 a {
   text-decoration: none;
 }
-a:visited {
+a:visited,
+a:link {
   color: inherit;
 }
 .main-wrapper {
