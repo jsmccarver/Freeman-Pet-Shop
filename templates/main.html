@@ -6,20 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Shop</title>
-    <link rel="stylesheet" type='text/css' media='screen' href={% static 'main.css' %} /> 
+    <link rel="stylesheet" href={% static 'main.css' %} type='text/css'
+    media='screen' />
   </head>
 
   <body>
-
-    {% include 'navbar.html' %}
-    {% if messages %}
-    <ul class="messages">
+    <div class="main-wrapper">
+      {% include 'navbar.html' %} {% if messages %}
+      <ul class="messages">
         {% for message in messages %}
         <li>{{ message }}</li>
         {% endfor %}
-    </ul>
-    {% endif %}
-
-    {% block content %} {% endblock %}
+      </ul>
+      {% endif %} {% block content %} {% endblock %}
+    </div>
   </body>
 </html>
