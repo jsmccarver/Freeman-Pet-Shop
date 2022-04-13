@@ -41,7 +41,7 @@ class Pet(models.Model):
     age = models.CharField(max_length=200)
 
     owner = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(default="default.jpg", upload_to='images')
     description = models.TextField(null=True, blank=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)

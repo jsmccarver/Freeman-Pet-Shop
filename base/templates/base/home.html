@@ -24,7 +24,7 @@
       <div class="pet-list">
         {% for pet in pets %}
         <div class="card-pets">
-          <img src="{{pet.image}}" />
+          <img src="{{pet.image.url}}" />
           {% if request.user == pet.poster %}
           <div>
             <a href="{% url 'update-pet' pet.id %}"> Update Pet </a>
