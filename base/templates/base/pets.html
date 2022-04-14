@@ -4,6 +4,7 @@
     <div class="pet-page">
       <h4>My First Name is {{ pet.name }}.</h4>
       <img src="{{pet.image.url }}" />
+      <p>Description: {{pet.description}}</p>
       <h4>Foster Email: {{user.email}}</h4>
       <button><a href="mailto:{{user.email}}">adopt</a></button>
       {% endblock content %}
